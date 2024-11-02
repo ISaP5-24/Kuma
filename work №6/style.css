@@ -1,0 +1,91 @@
+#backgroundd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: -1;
+}
+
+.image{
+    max-width: 100%;
+    height: 100%;
+}
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --button: 50px;
+    --calcPading: 30px;
+}
+
+.calc{
+    padding: var(--calcPading);
+    padding-top: 10px;
+    background-color: rgb(51, 51, 51);
+    position: fixed;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+#buttoncontain{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+#buttoncontain > * {
+    min-width: var(--button);
+    min-height: var(--button);  
+    background-color: #323232; 
+    color: #ffffff;
+    font-size: 20px;
+    border: 1px solid #ffffff;
+}
+
+#buttoncontain > *:nth-child(9) {
+    grid-column: 4;
+    grid-row: 2 / 4;
+}
+
+#buttoncontain > *:nth-child(18) {
+    grid-column: 4;
+    grid-row: 4 / 6;
+}
+
+#buttoncontain > *:nth-child(20) {
+    grid-column: 1 / 3;
+    grid-row: 5;
+}
+
+#output {
+    text-align: end;
+    font-size: 40px;
+    margin: 0;
+    padding: 20px , 5px;
+    background-color: rgb(61, 61, 61);
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 290px;
+    height: 47px;
+    align-content: center;
+}
+
+#output ::content {
+    filter: drop-shadow(0 0 10px 10px #0000);
+}
+
+#drag {
+    width: 100%;
+    height: 30px;
+    border-radius: 0 0 10px 10px;
+    border: 1px solid #4400ff;
+    border-width: 0 2px 2px 2px;
+    background-color: #4400ff;
+    cursor: grab;
+}
