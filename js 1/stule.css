@@ -1,0 +1,19 @@
+
+p {
+    color: rgb(0, 0, 0);
+}
+td {
+    border: 2px solid black ;
+    padding: 10px;
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+h2{
+    text-align: center;
+}
+h1{
+    text-align: center;
+}

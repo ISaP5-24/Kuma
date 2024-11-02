@@ -1,0 +1,77 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --button: 50px;
+    --calcPading: 30px;
+}
+
+.calc{
+    padding: var(--calcPading);
+    padding-top: 0;
+    background-color: rgb(51, 51, 51);
+    position: fixed;
+    border-radius: 15px;
+}
+
+#output {
+    text-align: end;
+    font-size: 40px;
+    margin: 0;
+    padding: 20px , 5px;
+    background-color: rgb(61, 61, 61);
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#output ::content {
+    filter: drop-shadow(0 0 10px 10px #0000);
+}
+
+#buttonContain{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+#buttonContain > * {
+    min-width: var(--button);
+    min-height: var(--button);  
+    background-color: #323232; 
+    color: #ffffff;
+    font-size: 20px;
+    border: 1px solid #ffffff;
+}
+
+#buttonContain > *:nth-child(9) {
+    grid-column: 4;
+    grid-row: 2 / 4;
+}
+
+#buttonContain > *:nth-child(18) {
+    grid-column: 4;
+    grid-row: 4 / 6;
+}
+
+#buttonContain > *:nth-child(20) {
+    grid-column: 1 / 3;
+    grid-row: 5;
+}
+
+#drag {
+    width: 100%;
+    height: 20px;
+    border-radius: 0 0 10px 10px;
+    border: 1px solid #ffffff;
+    border-width: 0 1px 1px 1px;
+    background-color: #323232;
+    cursor: grab;
+}
+
+
+
+
+
