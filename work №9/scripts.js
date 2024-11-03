@@ -1,4 +1,5 @@
 const preloaderContain = document.createElement('div');
+preloaderContain.id = 'preloaderContain'; // Присваиваем идентификатор
 preloaderContain.style.backgroundColor = 'black';
 preloaderContain.style.width = '100vw';
 preloaderContain.style.height = '100vh';
@@ -12,7 +13,6 @@ document.body.appendChild(preloaderContain);
 
 const preloader = document.createElement('div');
 preloader.style.height = preloader.style.width = '70px';
-//preloader.style.animation = 'rotation 1s linear infinite';
 preloaderContain.appendChild(preloader);
 
 const round = document.createElement('div');
@@ -20,7 +20,6 @@ round.style.border = '5px solid green';
 round.style.width = round.style.height = '70px';
 round.style.boxSizing = 'border-box';
 round.style.borderRadius = '100%';
-//round.style.backgroundColor = 'red';
 round.style.animation = 'rotation 0.4s linear infinite'; // регулировка времени загрузки
 preloader.appendChild(round);
 
@@ -35,10 +34,14 @@ square.style.alignItems = 'center center';
 square.style.margin = '20px'
 round.appendChild(square);
 
-document.addEventListener('DOMContentLoaded', function(){
+const styleSheet = document.createElement("style");
+styleSheet.innerText = `@keyframes rotation {0% { transform: rotate(0deg); }100% { transform: rotate(360deg); }}#preloaderContain {transition: opacity 0.3s ease;}`;
+document.head.appendChild(styleSheet);
+
+document.addEventListener('DOMContentLoaded', function() {
     const preloader = document.getElementById('preloaderContain');
-    preloader.style.opacity = '0';
-    setTimeout(function(){
-        preloader.style.display = 'none';
-    }, 300)
-})
+    //preloader.style.opacity = '0';
+    setTimeout(function() {
+        //preloader.style.display = 'none';
+    }, 300);
+});
