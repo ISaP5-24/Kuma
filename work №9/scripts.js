@@ -3,7 +3,7 @@ preloaderContain.style.backgroundColor = 'grey';
 preloaderContain.style.width = '100vw';
 preloaderContain.style.height = '100vh';
 preloaderContain.style.position = 'fixed';
-preloaderContain.style.top = '0';
+preloaderContain.style.top = preloaderContain.style.left = '0';
 preloaderContain.style.display = 'flex';
 preloaderContain.style.justifyContent = 'center';
 preloaderContain.style.alignItems = 'center';
@@ -26,7 +26,6 @@ const square = document.createElement('div');
 square.style.height = square.style.width = '37px';
 square.style.backgroundColor = 'grey';
 square.style.opacity = '0,5'
-square.style.blur = ('37px');
 round.appendChild(square);
 
 document.addEventListener('DOMContentLoaded', function(){
