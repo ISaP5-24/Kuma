@@ -46,4 +46,3 @@ document.addEventListener('DOMContentLoaded', function() {
         preloader.style.display = 'none';
     }, 300);
 });
-//Hello worold
