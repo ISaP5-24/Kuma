@@ -37,7 +37,7 @@ round.appendChild(square);
 
 const styleSheet = document.createElement("style");
 styleSheet.tinnerText = `@keyframes rotation {0% { transform: rotate(0deg); }100% { transform: rotate(360deg); }}#preloaderContain {transition: opacity 0.3s ease;}`;
-document.head.appendChild(styleShee);
+document.head.appendChild(styleSheet);
 
 document.addEventListener('DOMContentLoaded', function() {
     const preloader = document.getElementById('preloaderContain');
