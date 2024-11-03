@@ -46,8 +46,3 @@ document.addEventListener('DOMContentLoaded', function() {
         preloader.style.display = 'none';
     }, 300);
 });
-
-//World
-=======
-//helloy
->>>>>>> 05cf0716dc292ce4cc225b068564db7294c8bd28
