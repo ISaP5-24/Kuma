@@ -8,7 +8,6 @@ preloaderContain.style.left = '0';
 preloaderContain.style.display = 'flex';
 preloaderContain.style.justifyContent = 'center';
 preloaderContain.style.alignItems = 'center';
-
 document.body.appendChild(preloaderContain);
 
 const preloader = document.createElement('div');
@@ -22,12 +21,12 @@ round.style.width = round.style.height = '70px';
 round.style.boxSizing = 'border-box';
 round.style.borderRadius = '100%';
 //round.style.backgroundColor = 'red';
-round.style.animation = 'rotation 1s linear infinite';
+round.style.animation = 'rotation 0.4s linear infinite'; // регулировка времени загрузки
 
 preloader.appendChild(round);
 
 const square = document.createElement('div');
-square.style.height = '50px'
+square.style.height = '50px' // регулировка ширины загрузки
 square.style.width = '35px'; // регулировка длины загрузки
 square.style.backgroundColor = 'black';
 square.style.display = 'flex';
