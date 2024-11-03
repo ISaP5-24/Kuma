@@ -36,7 +36,7 @@ square.style.margin = '20px'
 round.appendChild(square);
 
 const styleSheet = document.createElement("style");
-styleSheet.tinnerText = '@keyframes rotation {0%{transform: rotate(0);}60%{transform: rotate(180deg);}100%{transform: rotate(360deg);}}#preloaderContain {transition: opacity 0.3s ease;}';
+styleSheet.innerText = '@keyframes rotation {0%{transform: rotate(0);}60%{transform: rotate(180deg);}100%{transform: rotate(360deg);}}#preloaderContain {transition: opacity 0.3s ease;}';
 document.head.appendChild(styleSheet);
 
 document.addEventListener('DOMContentLoaded', function() {
