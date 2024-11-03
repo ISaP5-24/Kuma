@@ -36,13 +36,13 @@ square.style.margin = '20px'
 round.appendChild(square);
 
 const styleSheet = document.createElement("style");
-styleSheet.tinnerText = `@keyframes rotation {0% { transform: rotate(0deg); }100% { transform: rotate(360deg); }}#preloaderContain {transition: opacity 0.3s ease;}`;
-document.head.appendChild(styleShee);
+styleSheet.innerText = `@keyframes rotation {0% { transform: rotate(0deg); }100% { transform: rotate(360deg); }}#preloaderContain {transition: opacity 0.3s ease;}`;
+document.head.appendChild(styleSheet);
 
 document.addEventListener('DOMContentLoaded', function() {
     const preloader = document.getElementById('preloaderContain');
-    preloader.style.opacity = '0';
+    //preloader.style.opacity = '0';
     setTimeout(function() {
-        preloader.style.display = 'none';
+        //preloader.style.display = 'none';
     }, 300);
 });
