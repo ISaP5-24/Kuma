@@ -30,8 +30,8 @@ round.appendChild(square);
 
 document.addEventListener('DOMContentLoaded', function(){
     const preloaderContain = document.createElement('preloaderContain');
-    //preloaderContain.style.opacity = '0'
+    preloaderContain.style.opacity = '0'
     setTimeout(function(){
-        //preloader.style.display = 'none';
+        preloader.style.display = 'none';
     }, 300)
 })
