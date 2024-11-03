@@ -22,7 +22,6 @@ round.style.boxSizing = 'border-box';
 round.style.borderRadius = '100%';
 //round.style.backgroundColor = 'red';
 round.style.animation = 'rotation 0.4s linear infinite'; // регулировка времени загрузки
-
 preloader.appendChild(round);
 
 const square = document.createElement('div');
