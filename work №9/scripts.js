@@ -48,4 +48,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 //саси
 //сам саси
-//сам глатай
