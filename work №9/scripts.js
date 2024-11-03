@@ -47,4 +47,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 300);
 });
 //1234
-//4321
