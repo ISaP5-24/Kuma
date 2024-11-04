@@ -1,3 +1,8 @@
+document.body.id = 'bodyR';
+const bodyR = document.body;
+bodyR.style.backgroundColor = 'black';
+bodyR.style.color = 'green';
+
 const preloaderContain = document.createElement('div');
 preloaderContain.id = 'preloaderContain'; // Присваиваем идентификатор
 preloaderContain.style.backgroundColor = 'black';
@@ -9,11 +14,12 @@ preloaderContain.style.left = '0';
 preloaderContain.style.display = 'flex';
 preloaderContain.style.justifyContent = 'center';
 preloaderContain.style.alignItems = 'center';
-
+preloaderContain.style.zIndex = '10';
 document.body.appendChild(preloaderContain);
 
 const preloader = document.createElement('div');
 preloader.style.height = preloader.style.width = '70px';
+preloader.style.zIndex = '15'
 preloaderContain.appendChild(preloader);
 
 const round = document.createElement('div');
@@ -41,8 +47,7 @@ document.head.appendChild(styleSheet);
 
 document.addEventListener('DOMContentLoaded', function() {
     const preloader = document.getElementById('preloaderContain');
-    //preloader.style.opacity = '0';
     setTimeout(function() {
-        //preloader.style.display = 'none';
+        preloader.style.display = 'none';
     }, 300);
 });
