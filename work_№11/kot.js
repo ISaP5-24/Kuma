@@ -1,52 +1,63 @@
 document.body.style.backgroundColor = '#000000';  
 document.body.style.height = '100vh';  
-document.body.style.overflow = 'hidden';
+document.body.style.overflow = 'hidden';  
 document.body.style.margin = '0';  
+document.body.style.position = 'relative';  
 
 const balick = document.createElement('div');  
-balick.style.width = balick.style.height = '90px';  
+balick.style.width = balick.style.height = '40px';  
 balick.style.backgroundColor = '#ffffff';  
 balick.style.borderRadius = '50%';  
-balick.style.position = 'absolute';  
+balick.style.position = 'absolute'; 
+balick.style.left = '500px'
 
 document.body.appendChild(balick);  
 
 const plita = document.createElement('div');  
 plita.style.width = '10px';  
 plita.style.height = '90px';  
-plita.style.backgroundColor = '#ffffff';  
+plita.style.backgroundColor = '#7FFF00';  
 plita.style.position = 'absolute';  
-plita.style.left = '20px';  
-plita.style.top = '300px';  
+plita.style.left = '70px';  
+plita.style.top = '200px';  
 
 document.body.appendChild(plita);  
 
 const plita2 = document.createElement('div');  
 plita2.style.width = '10px';  
 plita2.style.height = '90px';  
-plita2.style.backgroundColor = '#ffffff';  
+plita2.style.backgroundColor = '#FF0000';  
 plita2.style.position = 'absolute';  
-plita2.style.right = '20px';  
-plita2.style.top = '300px';  
+plita2.style.right = '70px';  
+plita2.style.top = '200px';  
 
 document.body.appendChild(plita2);  
 
-let positionX = 1;  
+let positionX = 500;  
 let positionY = 1;  
+
 let frameWidth = document.body.offsetWidth;  
 let frameHeight = document.body.offsetHeight;  
 
 const counter = [5, 3];  
-let direction = [1, 1];  
+let direction = [1, -1];  
 
+let score = [0, 0];
 window.addEventListener('resize', () => {  
     frameWidth = document.body.offsetWidth;  
     frameHeight = document.body.offsetHeight;  
-    positionX = positionY = 1;  
+    positionX = 500;  
+    positionY = 1
+
 });  
+
 
 setTimeout(() => {  
     setInterval(() => {  
+        const balickRect = balick.getBoundingClientRect();  
+        const plita1Rect = plita.getBoundingClientRect();  
+        const plita2Rect = plita2.getBoundingClientRect();  
+
         if (balick.offsetLeft + balick.offsetWidth >= frameWidth || balick.offsetLeft <= 0) {  
             direction[0] = -direction[0];  
         }  
@@ -55,130 +66,68 @@ setTimeout(() => {
             direction[1] = -direction[1];  
         }  
 
-        const barrierLeft = plita.offsetLeft + plita.offsetWidth;  
-        const barrierRight = plita2.offsetLeft + plita.offsetWidth;  
-
-        if (barrierLeft <= balick.offsetLeft + balick.offsetWidth && balick.offsetTop >= 300) {  
-            direction[0] = -direction[0];  
+        if (balickRect.right >= plita1Rect.left && balickRect.left <= plita1Rect.right &&  
+            balickRect.bottom >= plita1Rect.top && balickRect.top <= plita1Rect.bottom) {  
+            direction[0] = -direction[0];  // Отскок от левой плиты  
         }  
 
-        if (barrierRight >= balick.offsetLeft && balick.offsetTop >= 300) {  
-            direction[0] = -direction[0];  
+        if (balickRect.right >= plita2Rect.left && balickRect.left <= plita2Rect.right &&  
+            balickRect.bottom >= plita2Rect.top && balickRect.top <= plita2Rect.bottom){  
+            direction[0] = -direction[0]; // Отскок от правой плиты  
         }  
-
+        //console.log(balickRect.left)   
         positionX += counter[0] * direction[0];  
         positionY += counter[1] * direction[1];  
         balick.style.left = `${positionX}px`;  
         balick.style.top = `${positionY}px`;  
+        
+        if (balickRect.left == 0){
+            score[0] = score[0] + 1
+            sc.innerText = "Игрок 1 - " + score [0] + " ОчеЧа"
+            positionX = 500;  
+            positionY = 1
+            return;
+        }
+
+        if (balickRect.right > frameWidth){
+            score[1] = score[1] + 1
+            sc2.innerText = "Игрок 2 - " + score [1] + " ОчеЧа"
+            positionX = 500;  
+            positionY = 1
+        }
     }, 10);  
 }, 500);
 
-/*
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Анимация Balick</title>
-    <style>
-        body {
-            background-color: #000000;
-            height: 100vh;
-            overflow: hidden;
-            margin: 0;
-            position: relative;
-        }
-        #balick {
-            width: 50px;
-            height: 50px;
-            background-color: #ffffff;
-            border-radius: 50%;
-            position: absolute;
-            left: 1px;
-            top: 1px;
-        }
-        .plita {
-            width: 10px;
-            height: 100px;
-            background-color: #ffffff;
-            position: absolute;
-            top: 200px;
-        }
-    </style>
-</head>
-<body>
+document.addEventListener('keydown', function(event) {  
+    if (event.key === 'w' || event.key === 'W' || event.key === 'ц' || event.key === 'Ц'&& parseInt(plita.style.top) > 0) {  
+        plita.style.top = `${parseInt(plita.style.top) - 45}px`; // Перемещение вверх  
+    }  
+    if (event.key === 's' || event.key === 'S' || event.key === 'ы' || event.key === 'Ы' && parseInt(plita.style.top) < frameHeight - 90) {  
+        plita.style.top = `${parseInt(plita.style.top) + 45}px`; // Перемещение вниз  
+    }  
+});
 
-<script>
-    // Создание элемента balick
-    const balick = document.createElement('div');
-    balick.id = 'balick';
-    document.body.appendChild(balick);
+document.addEventListener('keydown', function(event) {  
+    if (event.key === 'ArrowUp' && parseInt(plita2.style.top) > 0) {  
+        plita2.style.top = `${parseInt(plita2.style.top) - 45}px`; // Перемещение вверх для правой плиты  
+    }  
+    if (event.key === 'ArrowDown' && parseInt(plita2.style.top) < frameHeight - 90) {  
+        plita2.style.top = `${parseInt(plita2.style.top) + 45}px`; // Перемещение вниз для правой плиты   
+    } 
+});
 
-    // Создание плит
-    const plita1 = document.createElement('div');
-    plita1.className = 'plita';
-    plita1.style.left = '100px';
-    document.body.appendChild(plita1);
+const sc = document.createElement('h3');  
+sc.style.margin = ' 0 0 20px 0'
+sc.style.fontSize = '40px';
+sc.style.textAlign = 'center';
+sc.style.color = '#7FFF00'
 
-    const plita2 = document.createElement('div');
-    plita2.className = 'plita';
-    plita2.style.left = 'calc(100% - 110px)';
-    document.body.appendChild(plita2);
+document.body.appendChild(sc);
 
-    // Переменные для управления движением
-    let positionX = 1;
-    let positionY = 1;
-    const speed = 5;
-    let directionX = 1;
-    let directionY = 1;
+const sc2 = document.createElement('h3');  
+sc2.style.margin = ' 0 0 20px 0'
+sc2.style.fontSize = '40px';
+sc2.style.textAlign = 'center';
+sc2.style.color = '#FF0000'
 
-    function animate() {
-        const frameWidth = window.innerWidth;
-        const frameHeight = window.innerHeight;
-
-        // Проверка столкновения с границами окна
-        if (positionX + balick.offsetWidth >= frameWidth || positionX <= 0) {
-            directionX = -directionX;
-        }
-
-        if (positionY + balick.offsetHeight >= frameHeight || positionY <= 0) {
-            directionY = -directionY;
-        }
-
-        // Проверка столкновения с плитами
-        const balickRect = balick.getBoundingClientRect();
-        const plita1Rect = plita1.getBoundingClientRect();
-        const plita2Rect = plita2.getBoundingClientRect();
-
-        // Проверка столкновения с левой плитой
-        if (balickRect.right >= plita1Rect.left &&
-            balickRect.left <= plita1Rect.right &&
-            balickRect.bottom >= plita1Rect.top &&
-            balickRect.top <= plita1Rect.bottom) {
-            directionX = -directionX; // Отскок от левой плиты
-        }
-
-        // Проверка столкновения с правой плитой
-        if (balickRect.right >= plita2Rect.left &&
-            balickRect.left <= plita2Rect.right &&
-            balickRect.bottom >= plita2Rect.top &&
-            balickRect.top <= plita2Rect.bottom) {
-            directionX = -directionX; // Отскок от правой плиты
-        }
-
-        // Обновление позиции
-        positionX += speed * directionX;
-        positionY += speed * directionY;
-        balick.style.left = `${positionX}px`;
-        balick.style.top = `${positionY}px`;
-
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-</script>
-
-</body>
-</html>
-
-Найти еще */
+document.body.appendChild(sc2);
