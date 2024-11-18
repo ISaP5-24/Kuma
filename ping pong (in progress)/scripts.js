@@ -16,17 +16,17 @@ document.body.appendChild(balick);
 
 const plita = document.createElement('div');  
 plita.style.width = '1vw';  
-plita.style.height = '8vh';  
+plita.style.height = '10vh';  
 plita.style.backgroundColor = '#7FFF00';  
 plita.style.position = 'absolute';  
-plita.style.left = '1vw';  
+plita.style.left = '2vw';  
 plita.style.top = '1vh';  
 
 document.body.appendChild(plita);  
 
 const plita2 = document.createElement('div');  
 plita2.style.width = '1vw';  
-plita2.style.height = '8vh';  
+plita2.style.height = '10vh';  
 plita2.style.backgroundColor = '#FF0000';  
 plita2.style.position = 'absolute';  
 plita2.style.right = '2vw';  
@@ -34,11 +34,11 @@ plita2.style.top = '1vh';
 
 document.body.appendChild(plita2);  
 
-let positionX = 400
-let positionY = 400
-
 let frameWidth = document.body.offsetWidth;  
-let frameHeight = document.body.offsetHeight;  
+let frameHeight = document.body.offsetHeight; 
+
+let positionX = frameWidth / 2;
+let positionY = frameHeight / 2;  
 
 const counter = [5, 3];  
 let direction = [1, -1];  
@@ -47,10 +47,9 @@ let score = [0, 0];
 window.addEventListener('resize', () => {  
     frameWidth = document.body.offsetWidth;  
     frameHeight = document.body.offsetHeight;  
-    positionX = 400
-    positionY = 400
+    positionX = (frameWidth - balick.offsetWidth) / 2;  
+    positionY = (frameHeight - balick.offsetHeight) / 2;  
 });  
-
 
 setTimeout(() => {  
     setInterval(() => {  
@@ -68,51 +67,51 @@ setTimeout(() => {
 
         if (balickRect.right >= plita1Rect.left && balickRect.left <= plita1Rect.right &&  
             balickRect.bottom >= plita1Rect.top && balickRect.top <= plita1Rect.bottom) {  
-            direction[0] = -direction[0];  // Отскок от левой плиты  
+            direction[0] = -direction[0];  
         }  
 
         if (balickRect.right >= plita2Rect.left && balickRect.left <= plita2Rect.right &&  
             balickRect.bottom >= plita2Rect.top && balickRect.top <= plita2Rect.bottom){  
-            direction[0] = -direction[0]; // Отскок от правой плиты  
+            direction[0] = -direction[0];  
         }  
-        //console.log(balickRect.left)   
+
         positionX += counter[0] * direction[0];  
         positionY += counter[1] * direction[1];  
         balick.style.left = `${positionX}px`;  
         balick.style.top = `${positionY}px`;  
         
-        if (balickRect.left == 0){
-            score[0] = score[0] + 1
-            sc.innerText = "Игрок 1 - " + score [0]
-            positionX = 400
-            positionY = 400
+        if (balickRect.left <= 0){
+            score[0] += 1;
+            sc.innerText = "Игрок 1 - " + score[0];
+            positionX = (frameWidth - balick.offsetWidth) / 2;  
+            positionY = (frameHeight - balick.offsetHeight) / 2;  
             return;
         }
 
         if (balickRect.right >= frameWidth){
-            score[1] = score[1] + 1
-            sc2.innerText = "Игрок 2 - " + score [1]
-            positionX = 400
-            positionY = 400
+            score[1] += 1;
+            sc2.innerText = "Игрок 2 - " + score[1];
+            positionX = (frameWidth - balick.offsetWidth) / 2;  
+            positionY = (frameHeight - balick.offsetHeight) / 2;  
         }
     }, 10);  
 }, 500);
 
 document.addEventListener('keydown', function(event) {  
-    if (event.key === 'w' || event.key === 'W' || event.key === 'ц' || event.key === 'Ц'&& parseInt(plita.style.top) > 0) {  
-        plita.style.top = `${parseInt(plita.style.top) - 45}px`; // Перемещение вверх  
+    if (event.key === 'w' || event.key === 'W' || event.key === 'ц' || event.key === 'Ц' && parseInt(plita.style.top) > 0) {  
+        plita.style.top = `${parseInt(plita.style.top) - 45}px`;  
     }  
     if (event.key === 's' || event.key === 'S' || event.key === 'ы' || event.key === 'Ы' && parseInt(plita.style.top) < frameHeight - 90) {  
-        plita.style.top = `${parseInt(plita.style.top) + 45}px`; // Перемещение вниз  
+        plita.style.top = `${parseInt(plita.style.top) + 45}px`;  
     }  
 });
 
 document.addEventListener('keydown', function(event) {  
     if (event.key === 'ArrowUp' && parseInt(plita2.style.top) > 0) {  
-        plita2.style.top = `${parseInt(plita2.style.top) - 45}px`; // Перемещение вверх для правой плиты  
+        plita2.style.top = `${parseInt(plita2.style.top) - 45}px`;  
     }  
     if (event.key === 'ArrowDown' && parseInt(plita2.style.top) < frameHeight - 90) {  
-        plita2.style.top = `${parseInt(plita2.style.top) + 45}px`; // Перемещение вниз для правой плиты   
+        plita2.style.top = `${parseInt(plita2.style.top) + 45}px`;  
     } 
 });
 
@@ -135,7 +134,7 @@ const sc2 = document.createElement('h3');
 sc2.style.margin = '0'
 sc2.style.fontSize = '3vw';
 sc2.style.textAlign = 'center';
-sc2.style.color = '#F1F122'
+sc2.style.color = '#FF0000'
 sc2.style.width = 'auto'
 sc2.style.marginLeft = '100px'
 sb.appendChild(sc2);
