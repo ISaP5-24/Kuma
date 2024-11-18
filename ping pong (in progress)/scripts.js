@@ -5,7 +5,7 @@ document.body.style.margin = '0';
 document.body.style.position = 'relative';  
 
 const balick = document.createElement('div');  
-balick.style.width = balick.style.height = '40px';  
+balick.style.width = balick.style.height = '5vw';  
 balick.style.backgroundColor = '#ffffff';  
 balick.style.borderRadius = '50%';  
 balick.style.position = 'absolute'; 
@@ -14,22 +14,22 @@ balick.style.left = '500px'
 document.body.appendChild(balick);  
 
 const plita = document.createElement('div');  
-plita.style.width = '10px';  
-plita.style.height = '90px';  
-plita.style.backgroundColor = '#7FFF00'; //ю 
+plita.style.width = '1vw';  
+plita.style.height = '8vh';  
+plita.style.backgroundColor = '#7FFF00';  
 plita.style.position = 'absolute';  
-plita.style.left = '70px';  
-plita.style.top = '200px';  
+plita.style.left = '1vw';  
+plita.style.top = '1vh';  
 
 document.body.appendChild(plita);  
 
 const plita2 = document.createElement('div');  
-plita2.style.width = '10px';  
-plita2.style.height = '90px';  
+plita2.style.width = '1vw';  
+plita2.style.height = '8vh';  
 plita2.style.backgroundColor = '#FF0000';  
 plita2.style.position = 'absolute';  
-plita2.style.right = '70px';  
-plita2.style.top = '200px';  
+plita2.style.right = '2vw';  
+plita2.style.top = '1vh';  
 
 document.body.appendChild(plita2);  
 
@@ -83,15 +83,15 @@ setTimeout(() => {
         
         if (balickRect.left == 0){
             score[0] = score[0] + 1
-            sc.innerText = "Игрок 1 - " + score [0] + " ОчеЧа"
+            sc.innerText = "Игрок 1 - " + score [0]
             positionX = 500;  
             positionY = 1
             return;
         }
 
-        if (balickRect.right > frameWidth){
+        if (balickRect.right >= frameWidth){
             score[1] = score[1] + 1
-            sc2.innerText = "Игрок 2 - " + score [1] + " ОчеЧа"
+            sc2.innerText = "Игрок 2 - " + score [1]
             positionX = 500;  
             positionY = 1
         }
@@ -116,18 +116,26 @@ document.addEventListener('keydown', function(event) {
     } 
 });
 
+const sb = document.createElement('div')
+sb.style.display = 'flex'
+sb.style.justifyContent = 'space-between'
+sb.style.padding = '20px 20px'
+document.body.appendChild(sb)
+
 const sc = document.createElement('h3');  
-sc.style.margin = ' 0 0 20px 0'
+sc.style.margin = '0'
 sc.style.fontSize = '40px';
 sc.style.textAlign = 'center';
 sc.style.color = '#7FFF00'
+sc.style.width = 'auto'
 
-document.body.appendChild(sc);
+sb.appendChild(sc);
 
 const sc2 = document.createElement('h3');  
-sc2.style.margin = ' 0 0 20px 0'
+sc2.style.margin = '0'
 sc2.style.fontSize = '40px';
 sc2.style.textAlign = 'center';
-sc2.style.color = '#FF0000'
+sc2.style.color = '#F1F122'
+sc2.style.width = 'auto'
 
-document.body.appendChild(sc2);
+sb.appendChild(sc2);
