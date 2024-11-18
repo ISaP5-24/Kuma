@@ -9,7 +9,8 @@ balick.style.width = balick.style.height = '5vw';
 balick.style.backgroundColor = '#ffffff';  
 balick.style.borderRadius = '50%';  
 balick.style.position = 'absolute'; 
-balick.style.left = '500px'
+balick.style.left = '50vw'
+balick.style.top = '50vh'
 
 document.body.appendChild(balick);  
 
@@ -33,8 +34,8 @@ plita2.style.top = '1vh';
 
 document.body.appendChild(plita2);  
 
-let positionX = 500;  
-let positionY = 1;  
+let positionX = 400
+let positionY = 400
 
 let frameWidth = document.body.offsetWidth;  
 let frameHeight = document.body.offsetHeight;  
@@ -46,9 +47,8 @@ let score = [0, 0];
 window.addEventListener('resize', () => {  
     frameWidth = document.body.offsetWidth;  
     frameHeight = document.body.offsetHeight;  
-    positionX = 500;  
-    positionY = 1
-
+    positionX = 400
+    positionY = 400
 });  
 
 
@@ -84,16 +84,16 @@ setTimeout(() => {
         if (balickRect.left == 0){
             score[0] = score[0] + 1
             sc.innerText = "Игрок 1 - " + score [0]
-            positionX = 500;  
-            positionY = 1
+            positionX = 400
+            positionY = 400
             return;
         }
 
         if (balickRect.right >= frameWidth){
             score[1] = score[1] + 1
             sc2.innerText = "Игрок 2 - " + score [1]
-            positionX = 500;  
-            positionY = 1
+            positionX = 400
+            positionY = 400
         }
     }, 10);  
 }, 500);
@@ -118,24 +118,24 @@ document.addEventListener('keydown', function(event) {
 
 const sb = document.createElement('div')
 sb.style.display = 'flex'
-sb.style.justifyContent = 'space-between'
+sb.style.justifyContent = 'center'
 sb.style.padding = '20px 20px'
+
 document.body.appendChild(sb)
 
 const sc = document.createElement('h3');  
 sc.style.margin = '0'
-sc.style.fontSize = '40px';
+sc.style.fontSize = '3vw';
 sc.style.textAlign = 'center';
 sc.style.color = '#7FFF00'
 sc.style.width = 'auto'
-
 sb.appendChild(sc);
 
 const sc2 = document.createElement('h3');  
 sc2.style.margin = '0'
-sc2.style.fontSize = '40px';
+sc2.style.fontSize = '3vw';
 sc2.style.textAlign = 'center';
 sc2.style.color = '#F1F122'
 sc2.style.width = 'auto'
-
+sc2.style.marginLeft = '100px'
 sb.appendChild(sc2);
