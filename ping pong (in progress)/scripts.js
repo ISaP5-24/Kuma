@@ -16,7 +16,7 @@ document.body.appendChild(balick);
 const plita = document.createElement('div');  
 plita.style.width = '10px';  
 plita.style.height = '90px';  
-plita.style.backgroundColor = '#7FFF00'; //ю 
+plita.style.backgroundColor = '#7FFF00'; 
 plita.style.position = 'absolute';  
 plita.style.left = '70px';  
 plita.style.top = '200px';  
