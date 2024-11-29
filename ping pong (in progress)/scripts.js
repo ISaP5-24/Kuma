@@ -16,7 +16,7 @@ document.body.appendChild(balick);
 const plita = document.createElement('div');  
 plita.style.width = '10px';  
 plita.style.height = '90px';  
-plita.style.backgroundColor = '#7FFF00'; //ю 
+plita.style.backgroundColor = '#7FFF00';
 plita.style.position = 'absolute';  
 plita.style.left = '70px';  
 plita.style.top = '200px';  
@@ -75,7 +75,7 @@ setTimeout(() => {
             balickRect.bottom >= plita2Rect.top && balickRect.top <= plita2Rect.bottom){  
             direction[0] = -direction[0]; // Отскок от правой плиты  
         }  
-        //console.log(balickRect.left)   
+        
         positionX += counter[0] * direction[0];  
         positionY += counter[1] * direction[1];  
         balick.style.left = `${positionX}px`;  
