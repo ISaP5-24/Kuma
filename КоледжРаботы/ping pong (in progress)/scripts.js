@@ -15,15 +15,9 @@ balick.style.top = '50vh'
 document.body.appendChild(balick);  
 
 const plita = document.createElement('div');  
-<<<<<<< HEAD:ping pong (in progress)/scripts.js
 plita.style.width = '10px';  
 plita.style.height = '90px';  
 plita.style.backgroundColor = '#7FFF00';
-=======
-plita.style.width = '1vw';  
-plita.style.height = '10vh';  
-plita.style.backgroundColor = '#7FFF00';  
->>>>>>> b875f38b41ba809cc0a8c2c7dae38d2d276d0d1e:КоледжРаботы/ping pong (in progress)/scripts.js
 plita.style.position = 'absolute';  
 plita.style.left = '2vw';  
 plita.style.top = '1vh';  
@@ -80,11 +74,6 @@ setTimeout(() => {
             balickRect.bottom >= plita2Rect.top && balickRect.top <= plita2Rect.bottom){  
             direction[0] = -direction[0];  
         }  
-<<<<<<< HEAD:ping pong (in progress)/scripts.js
-        
-=======
-
->>>>>>> b875f38b41ba809cc0a8c2c7dae38d2d276d0d1e:КоледжРаботы/ping pong (in progress)/scripts.js
         positionX += counter[0] * direction[0];  
         positionY += counter[1] * direction[1];  
         balick.style.left = `${positionX}px`;  
