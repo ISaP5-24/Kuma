@@ -31,7 +31,7 @@ function hy(){
             player.innerText = 'Победили Крестики'
         }
         else{
-            player.innerText = 'Победил Чполики'
+            player.innerText = 'Победили Чполики'
         }
 
 }
