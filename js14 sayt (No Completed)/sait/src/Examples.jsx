@@ -1,36 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import './Examples.css';
+import image1 from './assets/Vanna/1.jpg';
+import image2 from './assets/Vanna/2.jpg';
+import image3 from './assets/Vanna/3.jpg';
+import image4 from './assets/Vanna/4.jpg';
+import image5 from './assets/Vanna/5.jpg';
 
 function Examples() {
-  const exampleWorks = [
-    { id: 1, image: 'https://via.placeholder.com/300', description: 'Кухня с керамогранитом' },
-    { id: 2, image: 'https://via.placeholder.com/300', description: 'Ванная комната' },
-    { id: 3, image: 'https://via.placeholder.com/300', description: 'Гостиная с плиткой' },
-    { id: 4, image: 'https://via.placeholder.com/300', description: 'Балкон с керамогранитом' },
-  ];
-
-  <div id="slider">
-            <div id="slidescontain">
-                <div id="slidesline" style="left: 0">
-                    <div style="background-image: url(assets/1.jpg);"></div>
-                    <div style="background-image: url(photo/2.jpg);"></div>
-                    <div style="background-image: url(photo/3.jpg);"></div>
-                    <div style="background-image: url(photo/4.jpg);"></div>
-                </div> 
-            </div>
-        </div>
+  const images = [image1, image2, image3, image4, image5];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
-    <div className="section">
-      <h2>Примеры работ</h2>
-      <div className="examples-grid">
-        {exampleWorks.map((work) => (
-          <div key={work.id} className="example-item">
-            <img src={work.image} alt={work.description} className="example-image" />
-            <p className="example-description">{work.description}</p>
-          </div>
-        ))}
-      </div>
+    <div className="slider">
+      <h3 className="Glavnaya">Ванные комнаты</h3>
+      <div className="slide">
+  {images.map((image, index) => (
+    <img
+      key={index}
+      src={image}
+      alt={`Ванная комната ${index + 1}`}
+      className={index === currentIndex ? 'active' : ''}
+    />
+  ))}
+</div>
     </div>
+    
   );
 }
 
