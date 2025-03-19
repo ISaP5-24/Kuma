@@ -20,10 +20,10 @@ function Contact() {
   </svg>
 
   <span>Telegram</span>
-  
+
 </button>
-      <p>Телефон: +7 (123) 456-78-90</p>
-      <p>Email: ivan.ivanov@example.com</p>
+      <p className="text">Телефон: +7 (123) 456-78-90</p>
+      <p className="text">Email: ivan.ivanov@example.com</p>
     </div>
   );
 }
