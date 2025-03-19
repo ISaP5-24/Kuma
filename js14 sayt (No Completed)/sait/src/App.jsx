@@ -1,10 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './Home';
-import Examples from './Examples';
-import Services from './Services';
-import Contact from './Contact';
+import Home from './home.jsx';
+import Examples from './Examples.jsx';
+import Services from './Services.jsx';
+import Contact from './Contact.jsx';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
@@ -25,5 +25,7 @@ function App() {
     </Router>
   );
 }
+
+
 
 export default App;
