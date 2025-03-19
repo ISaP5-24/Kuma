@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './home.jsx';
 import Examples from './Examples.jsx';
+import Examples2 from './Examples2.jsx';
 import Services from './Services.jsx';
 import Contact from './Contact.jsx';
 import './App.css';
