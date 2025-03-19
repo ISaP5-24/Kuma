@@ -5,6 +5,8 @@ function Contact() {
   return (
     <div className="section">
       <h2 className="text">Контакты</h2>
+      <p className="text">Телефон: +7 (123) 456-78-90</p>
+      <p className="text">Email: ivan.ivanov@example.com</p>
 <button>
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -20,8 +22,6 @@ function Contact() {
   </svg>
   <span className = "knopka">Telegram</span>
 </button>
-      <p className="text">Телефон: +7 (123) 456-78-90</p>
-      <p className="text">Email: ivan.ivanov@example.com</p>
     </div>
   );
 }

@@ -14,11 +14,11 @@ button {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  border: 1px solid rgb(36, 161, 222);
+  border: 1px solid #4D4642;
   border-radius: 25px;
   outline: none;
   overflow: hidden;
-  color: rgb(36, 161, 222);
+  color: #4D4642;
   transition: color 0.3s 0.1s ease-out;
   display: flex; /* Добавлено */
   align-items: center; /* Выравнивание по вертикали */
@@ -57,3 +57,13 @@ button:hover {
 button:hover::before {
   box-shadow: inset 0 0 0 10em rgb(36, 161, 222);
 }
+
+.text {
+  font-size: 1.5rem;
+  color: #4D4642; /* Темный цвет текста */
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+

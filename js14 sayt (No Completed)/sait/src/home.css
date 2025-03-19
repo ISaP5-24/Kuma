@@ -1,0 +1,18 @@
+.textt {
+    font-size: 1.9rem;
+    color: #4D4642; /* Темный цвет текста */
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .specialization {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .description {
+    font-size: 16px;
+    color: #333;
+  }

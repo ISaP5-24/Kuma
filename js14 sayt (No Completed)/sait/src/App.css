@@ -19,16 +19,6 @@ body {
   margin: 10px 0;
 }
 
-.specialization {
-  font-size: 18px;
-  color: #555;
-}
-
-.description {
-  font-size: 16px;
-  color: #333;
-}
-
 .examples-grid {
   display: grid;
   gap: 15px;
