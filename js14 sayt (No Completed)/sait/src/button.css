@@ -3,7 +3,7 @@
     background-color: #4D4642; /* Белый фон шапки */
     padding: 10px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(197, 197, 197, 0.418); /* Тень для шапки */
+    box-shadow: 0 2px 4px #c5c5c56b; /* Тень для шапки */
   }
   
   .nav-link {

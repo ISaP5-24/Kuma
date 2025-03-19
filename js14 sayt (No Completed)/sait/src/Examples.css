@@ -31,3 +31,47 @@
 .slide img.active {
   opacity: 1;
 }
+
+/* Основные стили для слайдера */
+.slider {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Заголовки */
+.vanna {
+  font-size: 2.5rem;
+  color: #4D4642; /* Темный цвет текста */
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Контейнер для слайдов */
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+
+
+.slide img {
+  animation: fade 6s infinite;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .vanna {
+    font-size: 2rem;
+  }
+
+  .slide img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+}
