@@ -8,6 +8,17 @@ function Examples() {
     { id: 4, image: 'https://via.placeholder.com/300', description: 'Балкон с керамогранитом' },
   ];
 
+  <div id="slider">
+            <div id="slidescontain">
+                <div id="slidesline" style="left: 0">
+                    <div style="background-image: url(assets/1.jpg);"></div>
+                    <div style="background-image: url(photo/2.jpg);"></div>
+                    <div style="background-image: url(photo/3.jpg);"></div>
+                    <div style="background-image: url(photo/4.jpg);"></div>
+                </div> 
+            </div>
+        </div>
+
   return (
     <div className="section">
       <h2>Примеры работ</h2>
