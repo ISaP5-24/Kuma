@@ -18,7 +18,7 @@ function Examples() {
 
   return (
     <div className="slider">
-      <h3 className="Glavnaya">Ванные комнаты</h3>
+      <h3 className="vanna">Ванные комнаты</h3>
       <div className="slide">
   {images.map((image, index) => (
     <img
