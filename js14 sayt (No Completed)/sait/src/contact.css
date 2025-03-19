@@ -1,5 +1,4 @@
-/* From Uiverse.io by Mangesh636 */ 
-button {
+ button {
     background: transparent;
     position: relative;
     padding: 5px 15px;
@@ -49,7 +48,12 @@ button {
     box-shadow: inset 0 0 0 10em rgb(36, 161, 222);
   }
 
-  span{
-    text-align: center;
+  .text{
+    font-size: 2.5rem;
+    color: #4D4642; /* Темный цвет текста */
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
   
