@@ -2,24 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-}
-
-.navbar {
-  background-color: #646cff;
-  padding: 10px;
-  text-align: center;
-}
-
-.nav-link {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 18px;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
+  background-color: #AC9D92;
 }
 
 .section {
@@ -31,9 +14,9 @@ body {
 
 .worker-photo {
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  margin: 20px 0;
+  width: 300px;
+  height: 300px;
+  margin: 10px 0;
 }
 
 .specialization {
