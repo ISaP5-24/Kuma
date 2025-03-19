@@ -1,0 +1,58 @@
+/* Заголовок */
+.section h2 {
+  font-size: 2rem;
+  color: #4D4642; /* Темный цвет текста */
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+}
+
+/* Список услуг */
+.services-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.services-list li {
+  background-color: #AC9D92; /* Основной цвет фона */
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(77, 70, 66, 0.2); /* Тень с использованием #4D4642 */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-list li:hover {
+  background-color: #9C8D82; /* Темнее при наведении */
+  box-shadow: 0 4px 8px rgba(77, 70, 66, 0.3); /* Увеличенная тень */
+}
+
+/* Заголовок услуги */
+.service-title {
+  font-size: 1.2rem;
+  color: #4D4642; /* Темный цвет текста */
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Описание услуги */
+.service-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+  font-size: 1rem;
+  color: #4D4642; /* Темный цвет текста */
+  text-align: left;
+  background-color: #f9f9f9; /* Светлый фон для контраста */
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px rgba(77, 70, 66, 0.1); /* Тень с использованием #4D4642 */
+}
+
+.service-description.open {
+  max-height: 200px; /* Максимальная высота для анимации */
+  padding: 10px;
+  margin-top: 10px;
+}
