@@ -1,0 +1,33 @@
+.slider{
+  text-align: center;
+  max-width: 100%; /* Ограничение ширины слайдера */
+  margin: 0 auto; /* Центрирование слайдера */
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.slide img {
+  max-width: 33%; /* Ограничение ширины изображения */
+  height: auto; /* Сохранение пропорций */
+  display: block;
+  margin: 0 auto; /* Центрирование изображения */
+  border-radius: 8px; /* Скругление углов */
+  position: absolute;
+  top: 0;
+  left: 32.9vw;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Плавное появление */
+}
+
+.slide img.active {
+  opacity: 1;
+}
