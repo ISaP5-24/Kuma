@@ -1,0 +1,25 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .about-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .about-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .about-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+  }

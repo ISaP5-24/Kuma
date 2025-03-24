@@ -1,0 +1,51 @@
+.catalog-filters {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .catalog-filters h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .filter-group {
+    margin-bottom: 15px;
+  }
+  
+  .filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .filter-group select,
+  .filter-group input[type="number"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .price-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .price-range input {
+    flex: 1;
+  }
+  
+  .price-range span {
+    color: #666;
+  }
+  
+  .filter-group input[type="checkbox"] {
+    margin-right: 8px;
+  }

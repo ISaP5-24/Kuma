@@ -1,3 +1,26 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #2c2c2c;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
 #root { 
   max-width: 1280px; 
   margin: 0 auto; 
@@ -5,19 +28,46 @@
   text-align: center; 
 }
 
+h1 {
+  font-size: 5em;
+  line-height: 0.5;
+  margin: 0;
+  color: rgb(255, 165, 46);
+  margin-bottom: 10px;
+}
+
+.scoreboard {
+  background-color: #3c3c3c;
+  border-radius: 10px;
+  padding: 2em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .card { 
   padding: 2em; 
 }
 
 button { 
-  padding: 0; 
+  padding: 0.5em 1em; 
   border-radius: 8px; 
-  transition: transform 0.3s ease; 
-  background-color: transparent; 
+  transition: transform 0.3s ease, background-color 0.3s ease; 
+  background-color: rgb(255, 165, 46); 
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
 }
 
 button:hover { 
   opacity: 0.9; 
+  background-color: rgb(255, 140, 0);
 }
 
 .score {
@@ -27,8 +77,42 @@ button:hover {
 }
 
 .scorePL {
-  margin: 20px 30px   ; 
+  margin: 20px 30px; 
   font-size: 1.5em; 
   font-weight: bold; 
   color: #ffffff; 
+}
+
+.upgrade-button {
+  background-color: #4CAF50; /* Green */
+}
+
+.upgrade-button:hover {
+  background-color: #45a049; /* Darker green */
+}
+
+.clicked-message {
+  color: rgb(255, 0, 0); /* Red */
+  font-weight: bold;
+}
+.score-button {
+  background-color: transparent; /* Прозрачный фон */
+  border: none; /* Убираем рамку */
+  cursor: pointer; /* Курсор в виде указателя */
+  padding: 0; /* Убираем отступы */
+  transition: transform 0.3s ease; /* Плавный переход при наведении */
+}
+
+.score-button:hover {
+  transform: scale(1.05); /* Увеличение кнопки при наведении */
+}
+
+.score-button-image {
+  width: 100px; /* Ширина изображения */
+  height: 100px; /* Высота изображения */
+  display: block; /* Блочный элемент */
+}
+
+h2{
+  margin: 0;
 }
