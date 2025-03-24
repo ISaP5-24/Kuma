@@ -1,8 +1,8 @@
 import React from 'react';
-import MainSlider from './components/MainSlider';
-import Advantages from './components/Advantages';
-import PopularCategories from './components/PopularCategories';
-import SpecialOffers from './components/SpecialOffers';
+import MainSlider from './components/MainSlider/MainSlider.jsx';
+import Advantages from './components/Advantages/Advantages.jsx';
+import PopularCategories from './components/PopularCategories/PopularCategories.jsx';
+import SpecialOffers from './components/SpecialOffers/SpecialOffers.jsx';
 import './HomePage.css';
 
 const HomePage = () => {

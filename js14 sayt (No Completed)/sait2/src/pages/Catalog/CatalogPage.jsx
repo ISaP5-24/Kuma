@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { products } from './productsData.js';
-import ProductCard from './components/ProductCard/ProductCard.jsx';
+import ProductCard from "./components/ProductCard/ProductCard.jsx";
 import CatalogFilters from './components/CatalogFilters/CatalogFilters.jsx';
 import './CatalogPage.css';
 
