@@ -1,23 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Калькулятор</title>
+    <title>Элегантный калькулятор</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Калькулятор сложения</h1>
-        <button id="theme-toggle">Тёмная тема</button>
-        <input type="number" id="num1" placeholder="Число 1" />
-        <input type="number" id="num2" placeholder="Число 2" />
-        <button onclick="addNumbers()">Сложить</button>
-        <button onclick="clearScore()">Очистить</button>
-        <p id="result"></p>
+        <div class="calculator-card">
+            <h1 class="calculator-title">Элегантный калькулятор</h1>
+            <div class="theme-switcher">
+                <button id="theme-toggle" class="theme-btn">
+                    <span class="icon">🌙</span> Тёмная тема
+                </button>
+            </div>
+            
+            <div class="input-group">
+                <input type="number" id="num1" class="calculator-input" placeholder="Введите число">
+                <span class="plus-sign">+</span>
+                <input type="number" id="num2" class="calculator-input" placeholder="Введите число">
+            </div>
+            
+            <div class="button-group">
+                <button onclick="addNumbers()" class="calculator-btn calculate-btn">Вычислить</button>
+                <button onclick="clearScore()" class="calculator-btn clear-btn">Очистить</button>
+            </div>
+            
+            <div class="result-container">
+                <p id="result" class="result-text"></p>
+            </div>
+        </div>
     </div>
     <script src="scrypt.js"></script>
-    
 </body>
 </html>

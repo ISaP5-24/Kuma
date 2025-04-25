@@ -1,36 +1,46 @@
-function addNumbers(){
+function addNumbers() {
     const num1 = parseFloat(document.getElementById('num1').value);
     const num2 = parseFloat(document.getElementById('num2').value);
-    let result = num1 + num2;
-    if (isNaN(result)){
-        document.getElementById('result').textContent = 'Введите 2 числа'
+    const resultElement = document.getElementById('result');
+    
+    if (isNaN(num1) || isNaN(num2)) {
+        resultElement.textContent = 'Пожалуйста, введите оба числа';
+        resultElement.style.color = 'var(--danger-color)';
+        return;
     }
-    else{
-        document.getElementById('result').textContent = 'Результат: ' + result;
-    }
+    
+    const result = num1 + num2;
+    resultElement.textContent = `Результат: ${result}`;
+    resultElement.style.color = '';
+    
+    // Добавляем анимацию
+    resultElement.style.animation = 'none';
+    void resultElement.offsetWidth; // Сбрасываем анимацию
+    resultElement.style.animation = 'fadeIn 0.4s ease-out';
 }
-function clearScore(){
-    document.getElementById('result').textContent = ''
+
+function clearScore() {
+    document.getElementById('num1').value = '';
+    document.getElementById('num2').value = '';
+    document.getElementById('result').textContent = '';
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     
-    // Проверяем сохранённую тему (если есть)
-    if (localStorage.getItem('theme') === 'dark') {
+    // Проверяем сохранённую тему и системные предпочтения
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
         document.body.classList.add('dark-theme');
-        themeToggle.textContent = 'Светлая тема';
+        themeToggle.innerHTML = '<span class="icon">☀️</span> Светлая тема';
     }
     
-    // Обработчик клика по кнопке
     themeToggle.addEventListener('click', function() {
         document.body.classList.toggle('dark-theme');
-        
-        // Меняем текст кнопки
         const isDark = document.body.classList.contains('dark-theme');
-        themeToggle.textContent = isDark ? 'Светлая тема' : 'Тёмная тема';
-        
-        // Сохраняем выбор в localStorage
+        themeToggle.innerHTML = isDark ? '<span class="icon">☀️</span> Светлая тема' : '<span class="icon">🌙</span> Тёмная тема';
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 });
