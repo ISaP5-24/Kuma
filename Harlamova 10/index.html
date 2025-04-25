@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сортировка чисел</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Сортировка чисел</h1>
+        <div class="sorter">
+            <label for="numbers">Введите числа через запятую:</label>
+            <textarea id="numbers" placeholder="Например: 5, 3, 8, 1, 2"></textarea>
+            <div class="sort-options">
+                <label>
+                    <input type="radio" name="sort-direction" value="asc" checked> По возрастанию
+                </label>
+                <label>
+                    <input type="radio" name="sort-direction" value="desc"> По убыванию
+                </label>
+            </div>
+            <div class="buttons">
+                <button id="sort-btn">Сортировать</button>
+                <button id="clear-btn">Очистить</button>
+            </div>
+            <div id="error" class="error"></div>
+            <div id="result" class="result">
+                <div id="sorted-numbers"></div>
+                <div id="stats"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
