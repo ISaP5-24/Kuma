@@ -13,9 +13,9 @@ function addNumbers() {
     resultElement.textContent = `Результат: ${result}`;
     resultElement.style.color = '';
     
-    // Добавляем анимацию
+
     resultElement.style.animation = 'none';
-    void resultElement.offsetWidth; // Сбрасываем анимацию
+    void resultElement.offsetWidth; 
     resultElement.style.animation = 'fadeIn 0.4s ease-out';
 }
 
@@ -27,8 +27,7 @@ function clearScore() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
-    
-    // Проверяем сохранённую тему и системные предпочтения
+
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     
@@ -44,3 +43,4 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 });
+//check
